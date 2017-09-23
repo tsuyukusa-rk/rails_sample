@@ -6,8 +6,8 @@ class BmiController < ApplicationController
     height = params[:height]
     weight = params[:weight]
     @name = params[:name]
-    @height = height.to_f
-    @weight = height.to_f
+    @height = height
+    @weight = height
     calc(height.to_f, weight.to_f)
   end
 
