@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   # localhost://rails/info/routesでも見れる
   root "top#index"
   get "about" => "top#about"
+  get "about/:id" => "top#about"
 end

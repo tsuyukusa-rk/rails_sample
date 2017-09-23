@@ -6,5 +6,6 @@ class TopController < ApplicationController
   end
   def about
     @about = "about"
+    @param1 = params[:aaa]
   end
 end
