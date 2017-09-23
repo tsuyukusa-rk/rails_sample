@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   # controller + Action名
   # でつなぐ
   root "top#index"
+  get "about" => "top#about"
 end

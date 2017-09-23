@@ -4,4 +4,7 @@ class TopController < ApplicationController
   def index
     @time = Time.now.strftime("%Y/%m/%d %H:%M:%S")
   end
+  def about
+    @about = "about"
+  end
 end
