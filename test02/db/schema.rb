@@ -10,13 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-# マイグレーションコマンド
-# add_column
-# rename_column
-# change_colunm
-# remove_column
-
 ActiveRecord::Schema.define(version: 20170923072320) do
+
+  # member = Member.new(name: "あああ", password: "dora", email: "dora@exsample.com");
+  # member.save;
 
   create_table "members", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"

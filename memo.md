@@ -6,3 +6,5 @@
 - dbでindexをつけたければvarcharにする
 - MySQLは全角半角関係なく1文字
 - rails db:migrate:status
+- passwordはhash化しておくのが基本
+  - hash化は復元不可のもの
