@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # RESTfulに応じて、CRUDのルーティングを用意してくれる
   resources :users
   resources :members do
-    # 複数に対しt
+    # 複数に対して
     collection { get 'search' }
     # 単数に対して
     member { patch 'confirm', 'regist' }
