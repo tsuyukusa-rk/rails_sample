@@ -1,1 +1,10 @@
-<p><%= @member.name %></p>
+<p><%= link_to '一覧', members_path %></p>
+<p><%= link_to @member.name, member_path(@member) %></p>
+<p><%= link_to @member.name, edit_member_path(@member) %></p>
+<p><%= link_to @member.name, members_path, method: :post %></p>
+<p><%= link_to @member.name, member_path(@member), method: :patch %></p>
+<p><%= link_to @member.name, member_path(@member), method: :delete %></p>
+<p><%= link_to '検索一覧', search_members_path %></p>
+<p><%= link_to @member.name, confirm_member_path(@member), method: :patch %></p>
+<p><%= link_to @member.name, regist_member_path(@member), method: :patch %></p>
+<p><%= link_to @member.name, thankyou_member_path(@member) %></p>
