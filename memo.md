@@ -5,3 +5,4 @@
 - CSRFは大事
 - dbでindexをつけたければvarcharにする
 - MySQLは全角半角関係なく1文字
+- rails db:migrate:status
