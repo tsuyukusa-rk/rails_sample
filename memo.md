@@ -2,3 +2,4 @@
 - railsの設計思想は大事
 - Active Record = model
 - Active Recordは　ORM オーアールマッパーに基づく
+- CSRFは大事

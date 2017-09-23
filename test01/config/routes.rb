@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   root "top#index"
   get "about" => "top#about"
   get "about/:id" => "top#about"
+  # フォームの実装
+  get 'bmi' => 'bmi#index'
+  post 'confirm' => 'bmi#confirm'
 end
