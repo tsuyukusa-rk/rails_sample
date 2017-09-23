@@ -3,3 +3,5 @@
 - Active Record = model
 - Active Recordは　ORM オーアールマッパーに基づく
 - CSRFは大事
+- dbでindexをつけたければvarcharにする
+- MySQLは全角半角関係なく1文字
