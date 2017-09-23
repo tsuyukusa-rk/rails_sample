@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get "about" => "top#about"
   get "about/:id" => "top#about"
   # フォームの実装
-  get 'bmi' => 'bmi#index'
-  post 'confirm' => 'bmi#confirm'
+  get 'bmi/input' => 'bmi#input'
+  post 'bmi/confirm' => 'bmi#confirm'
 end

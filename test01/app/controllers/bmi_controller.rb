@@ -1,6 +1,6 @@
 class BmiController < ApplicationController
   protect_from_forgery expect: :confirm
-  def index
+  def input
   end
   def confirm
     @name = params[:name]
