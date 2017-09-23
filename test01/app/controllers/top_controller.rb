@@ -2,5 +2,6 @@
 class TopController < ApplicationController
   # アクション名
   def index
+    @time = Time.now.strftime("%Y/%m/%d %H:%M:%S")
   end
 end
