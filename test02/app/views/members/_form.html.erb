@@ -1,0 +1,10 @@
+<table border="1">
+  <tr>
+    <th><%= form.label :name, 'ユーザー名' %></th>
+    <td><%= form.text_field :name %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :birthday, '誕生日', for: 'member_birthday_1i' %></th>
+    <td><%= form.date_select :birthday, start_year: 1940, end_year: Time.now.year, use_month_numbers: true %></td>
+  </tr>
+</table>
