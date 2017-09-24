@@ -17,6 +17,9 @@ module Test02
     # ストロングパラメータの無効化
     config.action_controller.permit_all_parameters = true
 
+    # 日本語化
+    config.i18n.default_locale = :ja
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
