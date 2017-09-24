@@ -1,6 +1,8 @@
 class Member < ApplicationRecord
 
   # validation
+  # save発火時に行われる処理
+  # catchはsaveの分岐
   validates :name, presence: true
 
   # << はclassメソッド
