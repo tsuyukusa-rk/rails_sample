@@ -14,6 +14,9 @@ module Test02
     # タイムゾーンの変更
     config.time_zone = 'Tokyo'
 
+    # ストロングパラメータの無効果
+    config.action_controller.permit_all_parameters = true
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
