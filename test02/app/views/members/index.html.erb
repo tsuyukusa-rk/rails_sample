@@ -12,13 +12,13 @@
   </tr>
   <% @members.each do |member| %>
   <tr>
-    <td style="text-align: right"><%= member.id %></td>
-    <td style="text-align: right"><%= member.name %></td>
-    <td style="text-align: right"><%= member.password %></td>
-    <td style="text-align: right"><%= member.email %></td>
-    <td style="text-align: right"><%= member.tel %></td>
-    <td style="text-align: right"><%= member.gender %></td>
-    <td style="text-align: right"><%= member.birthday %></td>
+    <td><%= member.id %></td>
+    <td><%= link_to member.name, member %></td>
+    <td><%= member.password %></td>
+    <td><%= member.email %></td>
+    <td><%= member.tel %></td>
+    <td><%= member.gender %></td>
+    <td><%= member.birthday %></td>
     <td>
       <%= link_to "編集", [:edit, member] %> |
       <%= link_to "削除", member, method: :delete, data: { confirm: "本当に削除しますか?" } %>
@@ -34,6 +34,7 @@
 <% @members.each do |item| %>
   <p><%= item %></p>
 <% end %>
+<p><%= @member %></p>
 <!-- <p><%= link_to '一覧', members_path %></p> -->
 <!-- <p><%= link_to @member.name, member_path(@member) %></p>
 <p><%= link_to @member.name, edit_member_path(@member) %></p>
