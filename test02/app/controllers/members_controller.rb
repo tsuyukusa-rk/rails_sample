@@ -23,14 +23,17 @@ class MembersController < ApplicationController
     @members = Member.search(params[:q])
     render "index"
   end
+  # 新規作成
   def new
     @page_title = '新規作成' + @title
     @member = Member.new(birthday: Date.new(2000, 1, 1))
   end
+  # 編集
   def edit
     @page_title = '編集' + @title
     @member = Member.find(params[:id])
   end
+  # dbにデータ追加
   def create
     # modelをインスタンスしてsaveでdb追加
     @member = Member.new(params[:member])
