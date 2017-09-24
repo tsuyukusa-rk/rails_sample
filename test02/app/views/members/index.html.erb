@@ -10,18 +10,18 @@
     <th>誕生日</th>
     <th>操作</th>
   </tr>
-  <% @members.each do |member| %>
+  <% @members.each do |item| %>
   <tr>
-    <td><%= member.id %></td>
-    <td><%= link_to member.name, member %></td>
-    <td><%= member.password %></td>
-    <td><%= member.email %></td>
-    <td><%= member.tel %></td>
-    <td><%= member.gender %></td>
-    <td><%= member.birthday %></td>
+    <td><%= item.id %></td>
+    <td><%= link_to item.name, item %></td>
+    <td><%= item.password %></td>
+    <td><%= item.email %></td>
+    <td><%= item.tel %></td>
+    <td><%= item.gender %></td>
+    <td><%= item.birthday %></td>
     <td>
-      <%= link_to "編集", [:edit, member] %> |
-      <%= link_to "削除", member, method: :delete, data: { confirm: "本当に削除しますか?" } %>
+      <%= link_to "編集", [:edit, item] %> |
+      <%= link_to "削除", item, method: :delete, data: { confirm: "本当に削除しますか?" } %>
     </td>
   </tr>
   <% end %>
