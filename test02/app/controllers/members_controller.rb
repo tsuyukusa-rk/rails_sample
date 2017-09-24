@@ -32,7 +32,14 @@ class MembersController < ApplicationController
     @member = Member.find(params[:id])
   end
   def create
-    render plain: "#{params[:controller]}, #{params[:action]}, #{params[:id]}"
+    # modelをインスタンスしてsaveでdb追加
+    @member = Member.new(params[:member])
+    if @member.save
+      # redirectさせるとreload対策になる
+      ridirect_to @member, notice: '会員を登録しました'
+    else
+      render 'new'
+    end
   end
   def update
     render plain: "#{params[:controller]}, #{params[:action]}, #{params[:id]}"
