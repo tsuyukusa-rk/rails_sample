@@ -5,6 +5,9 @@ class MembersController < ApplicationController
   private def init
     @title = '画面'
   end
+  private def redirect (to, msg)
+    redirect_to to, notice: msg
+  end
   # 一覧表示
   def index
     @page_title = '一覧' + @title
@@ -40,7 +43,7 @@ class MembersController < ApplicationController
     # railsのsaveはidのあるなしで上書きか新規なのかをハンドリングしてくれる
     if @member.save
       # redirectさせるとreload対策になる
-      redirect_to @member, notice: '会員を登録しました'
+      redirect(@member, '会員を登録しました')
     else
       render 'new'
     end
@@ -54,13 +57,18 @@ class MembersController < ApplicationController
     # saveするときにid情報を持っているので、上書きとなる
     if @member.save
       # redirectさせるとreload対策になる
-      redirect_to @member, notice: '会員情報を更新しました'
+      redirect(@member, '会員情報を更新しました')
     else
       render 'edit'
     end
   end
+  # dbのカラム削除
+  # 物理削除は基本的にしない
+  # 状態管理で行うことが多い
   def destroy
-    render plain: "#{params[:controller]}, #{params[:action]}, #{params[:id]}"
+    @member = Member.find(params[:id])
+    @member.destroy
+    redirect(:members, '会員を削除しました')
   end
   def confirm
     render plain: "#{params[:controller]}, #{params[:action]}, #{params[:id]}"
