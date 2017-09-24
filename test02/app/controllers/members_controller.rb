@@ -37,6 +37,7 @@ class MembersController < ApplicationController
   def create
     # modelをインスタンスしてsaveでdb追加
     @member = Member.new(params[:member])
+    # railsのsaveはidのあるなしで上書きか新規なのかをハンドリングしてくれる
     if @member.save
       # redirectさせるとreload対策になる
       redirect_to @member, notice: '会員を登録しました'
@@ -44,8 +45,19 @@ class MembersController < ApplicationController
       render 'new'
     end
   end
+  # dbの更新
   def update
-    render plain: "#{params[:controller]}, #{params[:action]}, #{params[:id]}"
+    # idで検索してくる
+    @member = Member.find(params[:id])
+    # パラメータをもとに、既存データを上書き
+    @member.assign_attributes(params[:member])
+    # saveするときにid情報を持っているので、上書きとなる
+    if @member.save
+      # redirectさせるとreload対策になる
+      redirect_to @member, notice: '会員情報を更新しました'
+    else
+      render 'edit'
+    end
   end
   def destroy
     render plain: "#{params[:controller]}, #{params[:action]}, #{params[:id]}"
