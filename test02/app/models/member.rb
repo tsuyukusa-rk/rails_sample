@@ -1,4 +1,11 @@
 class Member < ApplicationRecord
+
+  # validation
+  validates :name, presence: true
+
+  # << はclassメソッド
+  # インスタンスなしでよびだせる
+  # インスタンスメソッドは defで書くやつ
   class << self
     def search(query)
       rel = order('id')
@@ -10,4 +17,5 @@ class Member < ApplicationRecord
       return rel
     end
   end
+
 end
