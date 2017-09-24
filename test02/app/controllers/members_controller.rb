@@ -39,7 +39,7 @@ class MembersController < ApplicationController
     @member = Member.new(params[:member])
     if @member.save
       # redirectさせるとreload対策になる
-      ridirect_to @member, notice: '会員を登録しました'
+      redirect_to @member, notice: '会員を登録しました'
     else
       render 'new'
     end
