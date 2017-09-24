@@ -1,6 +1,10 @@
 class MembersController < ApplicationController
   def index
+    # 1番目を取ってくる
     @member = Member.find(1)
+
+    # sortさせる
+    @members = Member.order('id')
   end
   def show
     render plain: '#[params[:controller]] , #[params[:action]], #[params[:id]]'

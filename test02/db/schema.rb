@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20170923072320) do
 
-  # member = Member.new(name: "あああ", password: "dora", email: "dora@exsample.com");
-  # member.save;
-
   create_table "members", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "password"
