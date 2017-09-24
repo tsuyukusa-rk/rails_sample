@@ -9,4 +9,8 @@ Rails.application.routes.draw do
     member { patch 'confirm', 'regist' }
     member { get 'thankyou' }
   end
+  # セッションには必要最低限のものを入れる
+  # あまり入れるとメモリを食う
+  # sessionは単数形のresourceにする
+  resource(:session, only: [:create, :destory])
 end
