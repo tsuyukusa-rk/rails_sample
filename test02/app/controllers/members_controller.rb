@@ -2,9 +2,11 @@ class MembersController < ApplicationController
   # アクションコールバック
   # after_action、around_actionとかもある
   before_action :init
+  # 初期処理
   private def init
     @title = '画面'
   end
+  # リダイレクト用
   private def redirect (to, msg)
     redirect_to to, notice: msg
   end
