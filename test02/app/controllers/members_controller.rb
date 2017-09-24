@@ -1,11 +1,18 @@
 class MembersController < ApplicationController
+  # 一覧表示
   def index
     # sortさせる
     @members = Member.order('id')
   end
+  # 個別ユーザー表示
   def show
     # 1番目を取ってくる
     @member = Member.find(params[:id])
+  end
+  # 検索結果
+  def search
+    @members = Member.search(params[:q])
+    render 'index'
   end
   def new
     render plain: '#[params[:controller]] , #[params[:action]], #[params[:id]]'
@@ -20,9 +27,6 @@ class MembersController < ApplicationController
     render plain: '#[params[:controller]] , #[params[:action]], #[params[:id]]'
   end
   def destroy
-    render plain: '#[params[:controller]] , #[params[:action]], #[params[:id]]'
-  end
-  def search
     render plain: '#[params[:controller]] , #[params[:action]], #[params[:id]]'
   end
   def confirm
