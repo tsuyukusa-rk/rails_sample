@@ -1,9 +1,14 @@
 class Member < ApplicationRecord
 
+  VALID_EMAIL_REGEXP = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z+\z]/i
+
   # validation
   # save発火時に行われる処理
   # catchはsaveの分岐
   validates :name, presence: true
+  validates :password, length: { minimum: 10 }, confirmation: true
+  validates :email, format: { with: VALID_EMAIL_REGEXP }
+  validates :tel, length: { in: 10..11 }
 
   # << はclassメソッド
   # インスタンスなしでよびだせる
