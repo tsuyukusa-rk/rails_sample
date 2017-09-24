@@ -8,7 +8,7 @@ class MembersController < ApplicationController
   end
   # リダイレクト用
   private def redirect (to, msg)
-    redirect_to to, notice: msg
+    redirect_to(to, notice: msg)
   end
   # 一覧表示
   def index
@@ -26,7 +26,7 @@ class MembersController < ApplicationController
   def search
     @page_title = '検索結果一覧' + @title
     @members = Member.search(params[:q])
-    render "index"
+    render("index")
   end
   # 新規作成
   def new
@@ -40,6 +40,7 @@ class MembersController < ApplicationController
   end
   # dbにデータ追加
   def create
+    @page_title = '新規作成' + @title
     # modelをインスタンスしてsaveでdb追加
     @member = Member.new(params[:member])
     # railsのsaveはidのあるなしで上書きか新規なのかをハンドリングしてくれる
@@ -47,11 +48,12 @@ class MembersController < ApplicationController
       # redirectさせるとreload対策になる
       redirect(@member, '会員を登録しました')
     else
-      render 'new'
+      render('new')
     end
   end
   # dbの更新
   def update
+    @page_title = '編集' + @title
     # idで検索してくる
     @member = Member.find(params[:id])
     # パラメータをもとに、既存データを上書き
@@ -61,7 +63,7 @@ class MembersController < ApplicationController
       # redirectさせるとreload対策になる
       redirect(@member, '会員情報を更新しました')
     else
-      render 'edit'
+      render('edit')
     end
   end
   # dbのカラム削除
