@@ -1,5 +1,12 @@
 class Member < ApplicationRecord
 
+  # include ActiveModel
+  # attr_accessor :foo
+  # attr_writer :bar
+  # attr_reader :hoge
+  # で、テーブルと連携しないmodelを作成できる
+  # これでapiのインターフェイスを立てたりする
+
   VALID_EMAIL_REGEXP = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z+\z]/i
 
   # validation
