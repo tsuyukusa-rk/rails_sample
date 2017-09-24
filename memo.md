@@ -8,3 +8,4 @@
 - rails db:migrate:status
 - passwordはhash化しておくのが基本
   - hash化は復元不可のもの
+- ユニークにしたい場合は、DBに追加するときの制約としてやっておいたほうがいい
