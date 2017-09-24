@@ -1,13 +1,13 @@
-<%= render 'shared/error', obj: @member %>
+<%= render('shared/error', obj: @member) %>
 
 <table border="1">
   <tr>
-    <th><%= form.label :name, 'ユーザー名' %></th>
-    <td><%= form.text_field :name %></td>
+    <th><%= form.label(:name, 'ユーザー名') %></th>
+    <td><%= form.text_field(:name) %></td>
   </tr>
   <tr>
-    <th><%= form.label :password, 'パスワード' %></th>
-    <td><%= form.text_field :password %></td>
+    <th><%= form.label(:password, 'パスワード') %></th>
+    <td><%= form.text_field(:password) %></td>
   </tr>
   <tr>
     <th><%= form.label :password_confirmation, 'パスワード確認' %></th>
