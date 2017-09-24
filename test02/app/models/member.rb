@@ -7,8 +7,8 @@ class Member < ApplicationRecord
   # catchはsaveの分岐
   validates :name, presence: true
   validates :password, length: { minimum: 10 }, confirmation: true
-  validates :email, format: { with: VALID_EMAIL_REGEXP }
-  validates :tel, length: { in: 10..11 }
+  validates(:email, format: { with: VALID_EMAIL_REGEXP }, confirmation: true)
+  validates(:tel, numericality: true, length: { in: 10..11 })
 
   # << はclassメソッド
   # インスタンスなしでよびだせる
