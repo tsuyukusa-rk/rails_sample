@@ -15,10 +15,10 @@ class MembersController < ApplicationController
     render 'index'
   end
   def new
-    render plain: '#[params[:controller]] , #[params[:action]], #[params[:id]]'
+    @member = Member.new(birthday: Date.new(2000, 1, 1))
   end
   def edit
-    render plain: '#[params[:controller]] , #[params[:action]], #[params[:id]]'
+    @member = Member.find(params[:id])
   end
   def create
     render plain: '#[params[:controller]] , #[params[:action]], #[params[:id]]'
